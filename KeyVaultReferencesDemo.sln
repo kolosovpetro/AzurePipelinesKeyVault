@@ -15,6 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C71C28F6
 		build\azure-pipelines.yml = build\azure-pipelines.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{32F23D55-24C0-4DBA-96B5-27B0BA6DCD62}"
+	ProjectSection(SolutionItems) = preProject
+		img\01_kv_access_policy.PNG = img\01_kv_access_policy.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
