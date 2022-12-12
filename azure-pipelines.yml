@@ -20,18 +20,25 @@ stages:
         steps:
           - task: AzureKeyVault@2
             inputs:
-              azureSubscription: "MangoRgServiceConnection"
+              azureSubscription: "KeyVaultServiceConnection"
               KeyVaultName: "pkolosovkv-700"
               SecretsFilter: "*"
               RunAsPreJob: false
 
           - task: CmdLine@2
             inputs:
-              script: "echo $(Your-Secret-Name) > secret.txt"
+              script: |
+                echo $(Password1) > secret2.txt
+                echo $(Password2) > secret2.txt
 
           - task: CopyFiles@2
             inputs:
-              Contents: secret.txt
+              Contents: secret1.txt
+              targetFolder: "$(Build.ArtifactStagingDirectory)"
+
+          - task: CopyFiles@2
+            inputs:
+              Contents: secret2.txt
               targetFolder: "$(Build.ArtifactStagingDirectory)"
 
           - task: PublishBuildArtifacts@1
