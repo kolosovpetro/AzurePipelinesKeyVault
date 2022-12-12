@@ -33,6 +33,8 @@ Example of how to access secrets from azure KeyVault inside azure pipelines.
 
 ## Configuring KeyVault access via App Service Managed Identity
 
+## Nuget packages required for KeyVault References
+
 ## How to work with KeyVault References
 
 - KeyVault References
