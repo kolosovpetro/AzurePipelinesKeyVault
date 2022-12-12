@@ -28,7 +28,7 @@ stages:
           - task: CmdLine@2
             inputs:
               script: |
-                echo $(Password1) > secret2.txt
+                echo $(Password1) > secret1.txt
                 echo $(Password2) > secret2.txt
 
           - task: CopyFiles@2
