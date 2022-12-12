@@ -1,0 +1,41 @@
+trigger: none
+
+pr: none
+
+variables:
+  - name: BuildConfiguration
+    value: "Release"
+  - name: BuildPlatform
+    value: "AnyCPU"
+
+stages:
+  - stage: "AzPipelines"
+    displayName: "Read secret & drop artifact"
+    jobs:
+      - job: "ReadSecret"
+        displayName: "Read Secret"
+        pool:
+          vmImage: "ubuntu-latest"
+
+        steps:
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: "MangoRgServiceConnection"
+              KeyVaultName: "pkolosovkv-700"
+              SecretsFilter: "*"
+              RunAsPreJob: false
+
+          - task: CmdLine@2
+            inputs:
+              script: "echo $(Your-Secret-Name) > secret.txt"
+
+          - task: CopyFiles@2
+            inputs:
+              Contents: secret.txt
+              targetFolder: "$(Build.ArtifactStagingDirectory)"
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+              publishLocation: "Container"
