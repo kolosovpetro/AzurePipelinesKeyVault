@@ -1,5 +1,7 @@
 # AzurePipelinesKeyVault
 
+[![Build Status](https://dev.azure.com/MangoMessenger/AzureKeyVaultPipelines/_apis/build/status/read-keyvault-secret?branchName=master)](https://dev.azure.com/MangoMessenger/AzureKeyVaultPipelines/_build/latest?definitionId=21&branchName=master)
+
 Example of how to access secrets from azure keyvault inside azure pipelines.
 
 Documentation: https://learn.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&tabs=yaml
