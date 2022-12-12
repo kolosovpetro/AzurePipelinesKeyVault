@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyVaultReferencesDemo", "KeyVaultReferencesDemo\KeyVaultReferencesDemo.csproj", "{DECA190C-3C8A-4004-9B48-CBC7133533F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{4BCB4A9F-2365-4DF9-9AEB-3F80364D2952}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C71C28F6-E786-46FA-AE7E-BF803F2805FB}"
+	ProjectSection(SolutionItems) = preProject
+		build\azure-pipelines.yml = build\azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DECA190C-3C8A-4004-9B48-CBC7133533F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECA190C-3C8A-4004-9B48-CBC7133533F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECA190C-3C8A-4004-9B48-CBC7133533F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECA190C-3C8A-4004-9B48-CBC7133533F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

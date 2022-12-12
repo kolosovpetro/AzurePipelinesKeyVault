@@ -21,7 +21,7 @@ stages:
           - task: AzureKeyVault@2
             inputs:
               azureSubscription: "KeyVaultServiceConnection"
-              KeyVaultName: "pkolosovkv-700"
+              KeyVaultName: "pkolosovkv-690"
               SecretsFilter: "*"
               RunAsPreJob: false
 
