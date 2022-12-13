@@ -5,7 +5,8 @@ Example of how to access secrets from azure KeyVault inside azure pipelines.
 ## Sources
 
 - https://learn.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&tabs=yaml
-- https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-secure-cloud-solutions/table-of-contents
+- [Microsoft Azure Developer: Implement Secure Cloud Solutions](https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-secure-cloud-solutions/table-of-contents)
+- [Designing a Sensitive Information Strategy](https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-sensitive-information-strategy/table-of-contents)
 
 ## Infrastructure provision
 
