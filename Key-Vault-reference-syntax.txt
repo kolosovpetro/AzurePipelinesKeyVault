@@ -1,0 +1,21 @@
+﻿***********************************
+See https://docs.microsoft.com/en-us/azure/app-service/app-service-key-vault-references for details.
+***********************************
+
+
+-- syntax #1
+---- specific version
+@Microsoft.KeyVault(SecretUri=https://kv-204-demo01.vault.azure.net/secrets/secretPerson/1dea44bd3dcb451db5b5c4cab215d757)
+
+---- latest version
+@Microsoft.KeyVault(SecretUri=https://kv-204-demo01.vault.azure.net/secrets/Password1)
+@Microsoft.KeyVault(SecretUri=https://kv-204-demo01.vault.azure.net/secrets/Password2)
+
+
+
+-- syntax #2
+---- specific version
+@Microsoft.KeyVault(VaultName=kv-204-demo01;SecretName=secretPerson;SecretVersion=1dea44bd3dcb451db5b5c4cab215d757)
+
+---- latest version
+@Microsoft.KeyVault(VaultName=kv-204-demo01;SecretName=secretPerson)
