@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C71C28F6
 	ProjectSection(SolutionItems) = preProject
 		build\azure-pipelines-read-secret.yml = build\azure-pipelines-read-secret.yml
 		build\azure-pipelines-build.yml = build\azure-pipelines-build.yml
+		build\azure-pipelines-build-template.yml = build\azure-pipelines-build-template.yml
+		build\azure-pipelines-deploy.yml = build\azure-pipelines-deploy.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{32F23D55-24C0-4DBA-96B5-27B0BA6DCD62}"
