@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{32F23D55-24C
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "enable_managed_identity", "enable_managed_identity", "{C625A23D-D378-4382-AD71-020E0A5E4A49}"
+	ProjectSection(SolutionItems) = preProject
+		enable_managed_identity\01_enable_appservice_managed_identity.PNG = enable_managed_identity\01_enable_appservice_managed_identity.PNG
+		enable_managed_identity\02_add_identity_to_keyvault_access_policy.PNG = enable_managed_identity\02_add_identity_to_keyvault_access_policy.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
