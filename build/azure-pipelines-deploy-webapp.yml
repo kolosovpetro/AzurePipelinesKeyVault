@@ -1,0 +1,54 @@
+trigger: none
+
+pr: none
+
+variables:
+  - name: BuildConfiguration
+    value: "Release"
+  - name: BuildPlatform
+    value: "AnyCPU"
+  - name: backendProjectPath
+    value: "AzurePipelinesKeyVault/KeyVaultReferencesDemo/KeyVaultReferencesDemo.csproj"
+
+stages:
+  - stage: "Build_Deploy"
+    displayName: "Build and Deploy"
+    jobs:
+      - job: "Build_And_Deploy"
+        displayName: "Build and Deploy"
+        pool:
+          vmImage: "ubuntu-latest"
+
+        steps:
+          - task: UseDotNet@2
+            displayName: 'Install .NET 6.x SDK'
+            inputs:
+              packageType: sdk
+              version: 6.x
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Dotnet restore'
+            inputs:
+              command: 'restore'
+              arguments: '--verbosity minimal'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Dotnet build $(buildConfiguration)'
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration) --no-restore'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Dotnet Publish'
+            inputs:
+              command: 'publish'
+              publishWebProjects: false
+              projects: '$(backendProjectPath)'
+              arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(BuildConfiguration) --no-build'
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Artifacts'
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
