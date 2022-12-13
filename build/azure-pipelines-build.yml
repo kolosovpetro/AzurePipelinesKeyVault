@@ -8,14 +8,14 @@ variables:
   - name: BuildPlatform
     value: "AnyCPU"
   - name: backendProjectPath
-    value: "AzurePipelinesKeyVault/KeyVaultReferencesDemo/KeyVaultReferencesDemo.csproj"
+    value: "KeyVaultReferencesDemo/KeyVaultReferencesDemo.csproj"
 
 stages:
-  - stage: "Build_Deploy"
-    displayName: "Build and Deploy"
+  - stage: "Build_Drop_Artifact"
+    displayName: "Build"
     jobs:
-      - job: "Build_And_Deploy"
-        displayName: "Build and Deploy"
+      - job: "Build_and_drop_Artifact"
+        displayName: "Build and Drop Artifact"
         pool:
           vmImage: "ubuntu-latest"
 
