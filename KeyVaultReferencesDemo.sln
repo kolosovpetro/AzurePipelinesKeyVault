@@ -8,17 +8,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{4BCB4A9F
 		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
+		Key-Vault-reference-syntax.txt = Key-Vault-reference-syntax.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C71C28F6-E786-46FA-AE7E-BF803F2805FB}"
 	ProjectSection(SolutionItems) = preProject
-		build\azure-pipelines.yml = build\azure-pipelines.yml
+		build\azure-pipelines-read-secret.yml = build\azure-pipelines-read-secret.yml
+		build\azure-pipelines-build.yml = build\azure-pipelines-build.yml
+		build\azure-pipelines-build-template.yml = build\azure-pipelines-build-template.yml
+		build\azure-pipelines-deploy.yml = build\azure-pipelines-deploy.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{32F23D55-24C0-4DBA-96B5-27B0BA6DCD62}"
 	ProjectSection(SolutionItems) = preProject
 		img\01_kv_access_policy.PNG = img\01_kv_access_policy.PNG
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "enable_managed_identity", "enable_managed_identity", "{C625A23D-D378-4382-AD71-020E0A5E4A49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

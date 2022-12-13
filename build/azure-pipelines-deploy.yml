@@ -1,0 +1,51 @@
+trigger: none
+
+pr: none
+
+variables:
+  - name: BuildConfiguration
+    value: "Release"
+  - name: BuildPlatform
+    value: "AnyCPU"
+  - name: backendProjectPath
+    value: "KeyVaultReferencesDemo/KeyVaultReferencesDemo.csproj"
+
+stages:
+  - stage: "Build_Drop_Artifact"
+    displayName: "Build"
+    jobs:
+      - job: "Build_and_drop_Artifact"
+        displayName: "Build and Drop Artifact"
+        pool:
+          vmImage: "ubuntu-latest"
+
+        steps:
+          - template: azure-pipelines-build-template.yml
+            
+  - stage: "dev"
+    displayName: "Deploy Web App"
+    dependsOn: Build_Drop_Artifact
+    condition: succeeded('Build_Drop_Artifact')
+    jobs:
+      - deployment: Deploy_Web_App
+        displayName: "Deploy Web App"
+        pool:
+          vmImage: "ubuntu-latest"
+        environment: dev
+        variables:
+          - name: WebAppName
+            value: "kvmvcappservice"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: drop
+                - task: AzureRmWebAppDeployment@4
+                  inputs:
+                    ConnectionType: "AzureRM"
+                    azureSubscription: "KeyVaultServiceConnection"
+                    appType: "webApp"
+                    WebAppName: "$(WebAppName)"
+                    packageForLinux: "$(Pipeline.Workspace)/drop/$(BuildConfiguration)/KeyVaultReferencesDemo.zip"
+                    JSONFiles: "**/appsettings.json"

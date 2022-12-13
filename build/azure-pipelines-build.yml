@@ -1,0 +1,23 @@
+trigger: none
+
+pr: none
+
+variables:
+  - name: BuildConfiguration
+    value: "Release"
+  - name: BuildPlatform
+    value: "AnyCPU"
+  - name: backendProjectPath
+    value: "KeyVaultReferencesDemo/KeyVaultReferencesDemo.csproj"
+
+stages:
+  - stage: "Build_Drop_Artifact"
+    displayName: "Build"
+    jobs:
+      - job: "Build_and_drop_Artifact"
+        displayName: "Build and Drop Artifact"
+        pool:
+          vmImage: "ubuntu-latest"
+
+        steps:
+          - template: azure-pipelines-build-template.yml

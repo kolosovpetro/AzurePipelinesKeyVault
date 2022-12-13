@@ -33,9 +33,14 @@ Example of how to access secrets from azure KeyVault inside azure pipelines.
 
 ## Configuring KeyVault access via App Service Managed Identity
 
+- See folder: `enable_managed_identity`
+
 ## Nuget packages required for KeyVault References
+
+- `Azure.Identity`
+- `Azure.Security.KeyVault.Secrets`
 
 ## How to work with KeyVault References
 
 - KeyVault References
-  Syntax: `@Microsoft.KeyVault(SecretUri=https://kv-204-demo01.vault.azure.net/secrets/secretName/1dea44bd3dcb451db5b5c4cab215d757)`
+  Syntax: `@Microsoft.KeyVault(SecretUri=https://pkolosovkv-690.vault.azure.net/secrets/secretValue/1e93930da05b46029c342c5ebe194445)`
