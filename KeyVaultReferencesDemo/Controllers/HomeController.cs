@@ -22,9 +22,11 @@ public class HomeController : Controller
     {
         var pass1 = _configuration["Password1"];
         var pass2 = _configuration["Password2"];
+        var secretValue = _configuration["secretValue"];
 
         ViewBag.Password1 = pass1;
         ViewBag.Password2 = pass2;
+        ViewBag.secretValue = secretValue;
 
         // Get secret from keyvault
 
