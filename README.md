@@ -35,6 +35,9 @@ Example of how to access secrets from azure KeyVault inside azure pipelines.
 
 ## Nuget packages required for KeyVault References
 
+- `Azure.Identity`
+- `Azure.Security.KeyVault.Secrets`
+
 ## How to work with KeyVault References
 
 - KeyVault References
